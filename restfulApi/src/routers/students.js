@@ -44,7 +44,7 @@ router.delete("/students/:id", async(req,res) =>{
         res.status(500).send(e);
     }
 })
-// Update the student by its ID
+
 router.patch("/students/:id", async(req,res) =>{    
     try{  
         const _id =req.params.id;      
