@@ -75,17 +75,17 @@ const result = await Playlist
 findDocuments();
 
 
-//updateOne
-/*const UpdateDocument = async(_id) =>{
-const result2 = await Playlist.updateOne({_id} , {
-    $set :{
-        name : "Javascript"
-    }
-  });
-}
+// //updateOne
+// /*const UpdateDocument = async(_id) =>{
+// const result2 = await Playlist.updateOne({_id} , {
+//     $set :{
+//         name : "Javascript"
+//     }
+//   });
+// }
 
-UpdateDocument("64c0e71337f0cfb1fbd419c1");
-*/
+// UpdateDocument("64c0e71337f0cfb1fbd419c1");
+// */
 
 const UpdateDocument = async() =>{
     const result2 = await Playlist.updateMany({ctype:'Back End'} , {
