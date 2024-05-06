@@ -38,7 +38,7 @@ jobs:
 
           git config user.email "$GITHUB_ACTOR@wohlig.com"
 
-          yq e '.spec.template.spec.containers[0].image = "rishithamarri/express-docker:${{ env.GITHUB_BRANCH }}"' -i deployments/express.yml
+          yq e '.spec.template.spec.containers[0].image = "rishithamarri/express-docker:${{ env.GITHUB_BRANCH }}"' -i deployment/express.yaml
 
 
           git add .
