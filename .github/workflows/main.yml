@@ -31,6 +31,8 @@ jobs:
 
           git clone https://${{ secrets.AWS_GITHUB_USER }}:${{ secrets.AWS_GITHUB_TOKEN }}@github.com/rishitha1007/Gitops_expressjs
 
+          cd /Gitops_expressjs
+
           git config user.name "$GITHUB_ACTOR"
 
           git config user.email "$GITHUB_ACTOR@wohlig.com
