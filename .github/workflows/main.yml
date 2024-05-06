@@ -29,9 +29,10 @@ jobs:
       - name: Manifet file
         run: |
 
-          git clone https://${{ secrets.AWS_GITHUB_USER }}:${{ secrets.AWS_GITHUB_TOKEN }}@github.com/rishitha1007/Gitops_expressjs
+          git clone https://${{ secrets.AWS_GITHUB_USER }}:${{ secrets.AWS_GITHUB_TOKEN }}@github.com/rishitha1007/Gitops_expressjss
+          ls
 
-          cd /Gitops_expressjs
+          cd Gitops_expressjs
 
           git config user.name "$GITHUB_ACTOR"
 
