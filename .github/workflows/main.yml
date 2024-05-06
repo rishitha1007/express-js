@@ -25,4 +25,25 @@ jobs:
         run: |
           echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login --username $REPO_NAME --password-stdin
           docker push $REPO_NAME/$IMAGE_NAME:$GITHUB_REF_NAME-$GITHUB-SHA
-          
+
+      - name: Manifet file
+        run: |
+
+          git clone https://${{ secrets.AWS_GITHUB_USER }}:${{ secrets.AWS_GITHUB_TOKEN }}@github.com/rishitha1007/Gitops_expressjs
+
+          cd Gitops_expressjs
+
+          git checkout main
+
+          git config user.name "$GITHUB_ACTOR"
+
+          git config user.email "$GITHUB_ACTOR@wohlig.com
+
+          yq e '.spec.template.spec.containers[0].image = "rishithamarri/express-docker:${{ env.GITHUB_BRANCH }}"' -i deployments/express.yml
+
+
+          git add .
+
+          git commit -m "updating newer image"
+
+          git push --set-upstream origin main\
